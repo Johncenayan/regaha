@@ -79,6 +79,7 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     unzip \
     python3 \
+    python3-pip \
  && mkdir -p /home/
 WORKDIR /root/webapp
 ADD webapp .
